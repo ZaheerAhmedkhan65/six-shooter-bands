@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediTech - Medical Products</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./resources/css/style.css">
+</head>
+<body>
+    <!-- Advanced Preloader -->
+    <div id="preloader">
+        <div class="loader-container">
+            <div class="morph-shape"></div>
+            <div class="morph-shape"></div>
+            <div class="pulse-circle"></div>
+        </div>
+        <div class="loading-text">Loading<span class="loading-dots"></span></div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-hospital-heart"></i>
+                <h1>MediTech</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li>
+                        <button class="btn btn-link contactButton" id="contactButton">
+                            Contact
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Advanced Medical Products</h2>
+            <p>Discover our range of high-quality medical equipment and supplies designed for healthcare professionals</p>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <main class="container">
+        <div class="products-grid" id="productsGrid">
+            <!-- Products will be loaded here by JavaScript -->
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Product Name</h2>
+                <button class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <img id="modalImage" class="modal-image" src="" alt="Product Image">
+                <div class="modal-details">
+                    <h3 id="modalProductName"></h3>
+                    <p id="modalDescription"></p>
+                    <div class="product-price" id="modalPrice"></div>
+                    <div class="product-category" id="modalCategory"></div>
+                    <div class="product-specs">
+                        <h4>Specifications</h4>
+                        <div class="specs-grid" id="modalSpecs">
+                            <!-- Specifications will be added by JavaScript -->
+                        </div>
+                        <!-- WhatsApp Contact Button -->
+                        <div class="whatsapp-contact">
+                            <a href="#" id="whatsappBtn" class="whatsapp-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i> Contact via WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MediTech</h3>
+                    <p>Providing high-quality medical products and equipment to healthcare professionals worldwide.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="products.html">Products</a>
+                    <a href="about.html">About Us</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Medical Way, Healthcare City</p>
+                    <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@meditech.com</p>
+                    <button class="contact-btn contactButton" id="contactButton">
+                        <i class="fas fa-envelope"></i> Contact Us
+                    </button>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; <span id="yearOfCopyRight"></span> MediTech. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Contact Modal -->
+    <div id="contactModal" class="contact-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Contact MediTech</h2>
+                <button class="close-btn" id="closeContactModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="contact-options">
+                    <div class="contact-option whatsapp-option">
+                        <div class="option-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <h3 class="option-title">WhatsApp</h3>
+                        <p class="option-description">Chat with us instantly on WhatsApp</p>
+                        <a href="#" id="whatsappButton" class="whatsapp-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Message on WhatsApp
+                        </a>
+                    </div>
+                    
+                    <div class="contact-option email-option">
+                        <div class="option-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3 class="option-title">Email</h3>
+                        <p class="option-description">Send us a message via email</p>
+                        <button class="whatsapp-btn" style="background: #3b82f6;" id="emailFormButton">
+                            <i class="fas fa-envelope"></i> Email Form
+                        </button>
+                    </div>
+                </div>
+
+                <div class="contact-form" id="emailForm">
+                    <h3 class="form-title">Send us a Message</h3>
+                    <form id="messageForm" action="https://formspree.io/f/xblagrve" method="POST">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" class="form-control" placeholder="Type your message here..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+   <script src="./data/Products.js"></script>
+   <script src="./js/index.js"></script>
+   <script src="./js/script.js"></script>
+</body>
+</html>
