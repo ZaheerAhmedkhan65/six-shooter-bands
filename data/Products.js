@@ -13,7 +13,8 @@ const products = [
             "Connectivity": "Bluetooth 5.0",
             "Weight": "180g",
             "Warranty": "2 years"
-        }
+        },
+        featured: true
     },
     {
         id: 2,
@@ -28,7 +29,8 @@ const products = [
             "Weight": "2.3 kg",
             "Dimensions": "23x13x18 cm",
             "Warranty": "3 years"
-        }
+        },
+        featured: true
     },
     {
         id: 3,
@@ -43,7 +45,8 @@ const products = [
             "Waterproof": "Yes",
             "Battery": "CR2032",
             "Warranty": "1 year"
-        }
+        },
+        featured: false
     },
     {
         id: 4,
@@ -58,7 +61,8 @@ const products = [
             "Power": "4xAA batteries",
             "Weight": "700g",
             "Warranty": "5 years"
-        }
+        },
+        featured: true
     },
     {
         id: 5,
@@ -73,7 +77,8 @@ const products = [
             "Flow Rate": "0.5-0.7 mL/min",
             "Weight": "1.2 kg",
             "Warranty": "3 years"
-        }
+        },
+        featured: true
     },
     {
         id: 6,
@@ -88,6 +93,56 @@ const products = [
             "Battery Backup": "8 hours",
             "Dimensions": "45x35x25 cm",
             "Warranty": "2 years"
-        }
+        },
+        featured: false
+    },
+    {
+        id: 7,
+        name: "Pulse Oximeter",
+        category: "Diagnostic",
+        price: "RS.999",
+        image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        description: "Accurate and portable pulse oximeter for monitoring blood oxygen levels.",
+        specs: {
+            "Measurement Time": "2 seconds",
+            "Memory": "10 readings",
+            "Waterproof": "Yes",
+            "Battery": "CR2032",
+            "Warranty": "1 year"
+        },
+        featured: true
+    },
+    {
+        id: 8,
+        name: "Thermometer",
+        category: "Diagnostic",
+        price: "RS.299",
+        image: "https://images.unsplash.com/photo-1584553059265-527d0f218ac4?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        description: "Accurate and lightweight thermometer for monitoring body temperature.",
+        specs: {
+            "Measurement Time": "10 seconds",
+            "Memory": "10 readings",
+            "Waterproof": "Yes",
+            "Battery": "CR2032",
+            "Warranty": "1 year"
+        },
+        featured: false
+    },
+    {
+        id: 9,
+        name: "Six Shooter Band",
+        category: "Diagnostic",
+        price: "RS.499",
+        image: "https://images.unsplash.com/photo-1586083702768-190ae093d34d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        description: "High-quality six shooter band for endoscopic and surgical use.",
+        specs: {
+            "Type": "Plastic",
+            "Size": "3.5 cm",
+            "Weight": "100g",
+            "Warranty": "1 year"
+        },
+        featured: true
     }
 ];
+
+const featuredProducts = products.filter(product => product.featured);

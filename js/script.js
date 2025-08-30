@@ -1,6 +1,7 @@
 // Check if products are cached and if this is the first visit in this session
 const isFirstVisit = !sessionStorage.getItem('visitedBefore');
 const cachedProducts = localStorage.getItem('cachedProducts');
+const cachedFeaturedProducts = localStorage.getItem('cachedFeaturedProducts');
 
 // Simulate page loading
 window.addEventListener('load', () => {
@@ -8,14 +9,23 @@ window.addEventListener('load', () => {
         // Show preloader on first visit or if no cached data
         setTimeout(() => {
             preloader.classList.add('hidden');
+            initSlider();
             displayProducts();
+            // Auto slide every 5 seconds
+            // setInterval(nextSlide, 5000);
         }, randomTimer(1000, 3000));
     } else {
         // Hide preloader immediately and display cached products
         preloader.classList.add('hidden');
+        initSlider();
         displayProducts();
+        // Auto slide every 5 seconds
+        // setInterval(nextSlide, 5000);
     }
 });
+
+// Update slider on window resize
+window.addEventListener('resize', initSlider);
 
 
 function randomTimer(min, max) {
