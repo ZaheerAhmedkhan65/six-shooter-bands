@@ -18,8 +18,6 @@ const nextBtn = document.getElementById('nextBtn');
 const sliderDots = document.getElementById('sliderDots');
 const sliderContainer = document.querySelector('.slider-container');
 
-const featuredProductsGrid = document.getElementById('featuredProductsGrid');
-
 // Slider state
 let currentSlide = 0;
 let slideWidth = 0;
@@ -222,7 +220,7 @@ function handleSwipe() {
 
 
 // Open modal with product details
-function openModal(product) {
+export function openModal(product) {
     if (!modalTitle || !modalImage || !modalProductName || !modalDescription || !modalPrice || !modalSpecs) {
         return;
     }

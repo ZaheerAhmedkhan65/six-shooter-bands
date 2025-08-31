@@ -159,8 +159,7 @@ export const products = [
 
 export const featuredProducts = products.filter(product => product.featured);
 export const topProducts = products.filter(product => product.ratting >= 4.5);
-const allProducts = [...products];
-const productCategories = [...new Set(products.map(product => product.category))];
+export const productCategories = [...new Set(products.map(product => product.category))];
 const productPrices = [...new Set(products.map(product => product.price))];
 const productPricesRangeMin = getMin(productPrices);
 const productPricesRangeMax = getMax(productPrices);
