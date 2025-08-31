@@ -7,7 +7,7 @@ export const products = [
         name: "Six Shooter Band",
         category: "Diagnostic",
         price: "RS.499",
-        image: "../resources/products/img/six-shooter-band.jpeg",
+        image: "./resources/products/img/six-shooter-band.jpeg",
         description: "High-quality six shooter band for endoscopic and surgical use.",
         specs: {
             "Type": "Plastic",
