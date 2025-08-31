@@ -1,20 +1,22 @@
+import { getMin, getMax } from "./utils.js";
+
 // Sample product data
-const products = [
+export const products = [
     {
         id: 1,
-        name: "Digital Stethoscope",
+        name: "Six Shooter Band",
         category: "Diagnostic",
-        price: "RS.2,499",
-        image: "https://images.unsplash.com/photo-1586083702768-190ae093d34d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-        description: "Advanced digital stethoscope with noise reduction technology and Bluetooth connectivity for clear auscultation and recording.",
+        price: "RS.499",
+        image: "../resources/products/img/six-shooter-band.jpeg",
+        description: "High-quality six shooter band for endoscopic and surgical use.",
         specs: {
-            "Type": "Electronic",
-            "Battery Life": "24 hours",
-            "Connectivity": "Bluetooth 5.0",
-            "Weight": "180g",
-            "Warranty": "2 years"
+            "Type": "Plastic",
+            "Size": "3.5 cm",
+            "Weight": "100g",
+            "Warranty": "1 year"
         },
-        featured: true
+        featured: true,
+        ratting: 4.9
     },
     {
         id: 2,
@@ -30,7 +32,8 @@ const products = [
             "Dimensions": "23x13x18 cm",
             "Warranty": "3 years"
         },
-        featured: true
+        featured: true,
+        ratting: 3
     },
     {
         id: 3,
@@ -46,7 +49,8 @@ const products = [
             "Battery": "CR2032",
             "Warranty": "1 year"
         },
-        featured: false
+        featured: false,
+        ratting: 4.4
     },
     {
         id: 4,
@@ -62,7 +66,8 @@ const products = [
             "Weight": "700g",
             "Warranty": "5 years"
         },
-        featured: true
+        featured: true,
+        ratting: 4.7
     },
     {
         id: 5,
@@ -78,7 +83,8 @@ const products = [
             "Weight": "1.2 kg",
             "Warranty": "3 years"
         },
-        featured: true
+        featured: true,
+        ratting: 4.5
     },
     {
         id: 6,
@@ -94,7 +100,8 @@ const products = [
             "Dimensions": "45x35x25 cm",
             "Warranty": "2 years"
         },
-        featured: false
+        featured: true,
+        ratting: 4.1
     },
     {
         id: 7,
@@ -110,7 +117,8 @@ const products = [
             "Battery": "CR2032",
             "Warranty": "1 year"
         },
-        featured: true
+        featured: true,
+        ratting: 4.7
     },
     {
         id: 8,
@@ -126,23 +134,40 @@ const products = [
             "Battery": "CR2032",
             "Warranty": "1 year"
         },
-        featured: false
+        featured: true,
+        ratting: 4.8
     },
     {
         id: 9,
-        name: "Six Shooter Band",
+        name: "Digital Stethoscope",
         category: "Diagnostic",
-        price: "RS.499",
+        price: "RS.2,499",
         image: "https://images.unsplash.com/photo-1586083702768-190ae093d34d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-        description: "High-quality six shooter band for endoscopic and surgical use.",
+        description: "Advanced digital stethoscope with noise reduction technology and Bluetooth connectivity for clear auscultation and recording.",
         specs: {
-            "Type": "Plastic",
-            "Size": "3.5 cm",
-            "Weight": "100g",
-            "Warranty": "1 year"
+            "Type": "Electronic",
+            "Battery Life": "24 hours",
+            "Connectivity": "Bluetooth 5.0",
+            "Weight": "180g",
+            "Warranty": "2 years"
         },
-        featured: true
+        featured: true,
+        ratting: 4.9
     }
+
 ];
 
-const featuredProducts = products.filter(product => product.featured);
+export const featuredProducts = products.filter(product => product.featured);
+export const topProducts = products.filter(product => product.ratting >= 4.5);
+const allProducts = [...products];
+const productCategories = [...new Set(products.map(product => product.category))];
+const productPrices = [...new Set(products.map(product => product.price))];
+const productPricesRangeMin = getMin(productPrices);
+const productPricesRangeMax = getMax(productPrices);
+// console.log("    productPricesRangeMin: ", productPricesRangeMin);
+// console.log("    productPricesRangeMax: ", productPricesRangeMax);
+// console.log("    productCategories: ", productCategories);
+// console.log("    allProducts: ", allProducts);
+// console.log("    topProducts: ", topProducts);
+// console.log("    productPrices: ", productPrices);
+

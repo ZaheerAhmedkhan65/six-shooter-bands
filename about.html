@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - MediTech</title>
+    <title>About Us - Medicare</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="./resources/css/style.css">
 </head>
@@ -17,33 +17,66 @@
         </div>
         <div class="loading-text">Loading<span class="loading-dots"></span></div>
     </div>
+  
     <!-- Header -->
     <header>
         <div class="container header-content">
             <div class="logo">
-                <a href="index.html" class="logo-link">
-                    <h1>MediTech</h1>
+                 <a href="index.html" class="logo-link">
+                    <h1 class="company-name"></h1>
                 </a>
             </div>
-            <nav>
+            
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="products.html">Products</a></li>
-                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li class="active"><a href="about.html">About Us</a></li>
                     <li>
-                        <button class="btn btn-link contactButton" id="contactButton">
+                        <button class="btn contactButton" id="contactButton">
                             Contact
                         </button>
                     </li>
                 </ul>
             </nav>
+            
+            <!-- Mobile Toggle Button -->
+            <button class="mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </header>
+
+    <!-- Off-Canvas Menu -->
+    <div class="offcanvas" id="offcanvas">
+        <div class="offcanvas-header">
+            <h2>Menu</h2>
+            <button class="offcanvas-close" id="closeOffcanvas">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="offcanvas-nav">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="products.html"><i class="fas fa-box"></i> Products</a></li>
+                <li class="active"><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                <li>
+                    <button class="contactButton" id="mobileContactButton">
+                        <i class="fas fa-envelope"></i> Contact
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h2>About MediTech</h2>
+            <h2>About <span class="company-name"></span></h2>
             <p>Leading the way in medical innovation and patient care for over 15 years</p>
         </div>
     </section>
@@ -56,7 +89,7 @@
             </div>
             <div class="about-content">
                 <h2>Our Story</h2>
-                <p>Founded in 2008, MediTech began as a small startup with a big vision: to revolutionize the medical equipment industry by providing innovative, reliable, and affordable solutions to healthcare providers worldwide.</p>
+                <p>Founded in 2008, <span class="company-name"></span> began as a small startup with a big vision: to revolutionize the medical equipment industry by providing innovative, reliable, and affordable solutions to healthcare providers worldwide.</p>
                 <p>What started as a team of five passionate individuals has now grown into a global company with over 200 employees and a presence in more than 30 countries. Our journey has been marked by continuous innovation, strategic partnerships, and an unwavering commitment to improving patient outcomes.</p>
             </div>
         </section>
@@ -67,7 +100,7 @@
             </div>
             <div class="about-content">
                 <h2>Innovation & Excellence</h2>
-                <p>At MediTech, we believe that innovation is the key to advancing healthcare. Our dedicated research and development team works tirelessly to create cutting-edge medical products that meet the evolving needs of healthcare professionals and their patients.</p>
+                <p>At <span class="company-name"></span>, we believe that innovation is the key to advancing healthcare. Our dedicated research and development team works tirelessly to create cutting-edge medical products that meet the evolving needs of healthcare professionals and their patients.</p>
                 <p>We invest significantly in R&D, allocating over 15% of our annual revenue to developing new technologies and improving existing products. This commitment to innovation has resulted in numerous patents and industry awards, establishing MediTech as a leader in medical technology.</p>
             </div>
         </section>
@@ -141,8 +174,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>MediTech</h3>
-                    <p>Providing high-quality medical products and equipment to healthcare professionals worldwide.</p>
+                    <h3 class="company-name"></h3>
+                    <p>Providing high-quality medical products and equipment to healthcare professionals all  over in Pakistan.</p>
                 </div>
                 <div class="footer-section">
                     <h3>Quick Links</h3>
@@ -152,16 +185,16 @@
                 </div>
                 <div class="footer-section">
                     <h3>Contact Us</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> 123 Medical Way, Healthcare City</p>
-                    <p><i class="fas fa-phone"></i> (555) 123-4567</p>
-                    <p><i class="fas fa-envelope"></i> info@meditech.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> <span id="address"></span></p>
+                    <p><i class="fas fa-phone"></i> <span id="phoneNumber"></span></p>
+                    <p><i class="fas fa-envelope"></i> <span id="email"></span></p>
                     <button class="contact-btn contactButton" id="contactButton">
                         <i class="fas fa-envelope"></i> Contact Us
                     </button>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; <span id="yearOfCopyRight"></span> MediTech. All rights reserved.</p>
+                <p>&copy; <span id="yearOfCopyRight"></span> <span class="company-name"></span>. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -224,8 +257,12 @@
             </div>
         </div>
     </div>
-    <script src="./data/Products.js"></script>
-    <script src="./js/index.js"></script>
-    <script src="./js/script.js"></script>
+    <script>
+      const currentPage = "about";
+   </script>
+    <script type="module" src="./data/Products.js"></script>
+    <script type="module" src="./js/main.js"></script>
+   <script type="module" src="./js/index.js"></script>
+   <script type="module" src="./js/script.js"></script>
 </body>
 </html>

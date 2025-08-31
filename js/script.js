@@ -1,18 +1,16 @@
-// Check if products are cached and if this is the first visit in this session
-const isFirstVisit = !sessionStorage.getItem('visitedBefore');
-const cachedProducts = localStorage.getItem('cachedProducts');
-const cachedFeaturedProducts = localStorage.getItem('cachedFeaturedProducts');
+import { initSlider, displayProducts, nextSlide  } from './index.js';
+import { COMPANY_WHATSAPP_NUMBER, IS_FIRST_VISIT, CACHED_PRODUCTS } from '../data/constants.js';
 
 // Simulate page loading
 window.addEventListener('load', () => {
-    if (isFirstVisit || !cachedProducts) {
+    if (IS_FIRST_VISIT || !CACHED_PRODUCTS) {
         // Show preloader on first visit or if no cached data
         setTimeout(() => {
             preloader.classList.add('hidden');
             initSlider();
             displayProducts();
             // Auto slide every 5 seconds
-            // setInterval(nextSlide, 5000);
+            setInterval(nextSlide, 5000);
         }, randomTimer(1000, 3000));
     } else {
         // Hide preloader immediately and display cached products
@@ -20,7 +18,7 @@ window.addEventListener('load', () => {
         initSlider();
         displayProducts();
         // Auto slide every 5 seconds
-        // setInterval(nextSlide, 5000);
+        setInterval(nextSlide, 5000);
     }
 });
 
@@ -71,10 +69,9 @@ window.addEventListener('click', (e) => {
 });
 
 // Setup WhatsApp button
-const phoneNumber = "+923080944425"; // Replace with your actual phone number
 const whatsappMessage = "Hello, I'm interested in your medical products. Could you provide more information?";
 const encodedMessage = encodeURIComponent(whatsappMessage);
-whatsappButton.href = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+whatsappButton.href = `https://wa.me/${COMPANY_WHATSAPP_NUMBER}?text=${encodedMessage}`;
 
 // Toggle email form
 emailFormButton.addEventListener('click', () => {
