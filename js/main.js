@@ -1,13 +1,13 @@
 import {  COMPANY_NAME, COMPANY_ADDRESS, COMPANY_PHONE_NUMBER, COMPANY_Email } from '../data/constants.js';
 const address = document.getElementById('address');
-const email = document.getElementById('email');
+const companyEmail = document.getElementById('companyEmail');
 const phoneNumber = document.getElementById('phoneNumber');
 const companyName = document.querySelectorAll('.company-name');
 
 
 // Populate contact information
 address.textContent = COMPANY_ADDRESS;
-email.textContent = COMPANY_Email;
+companyEmail.textContent = COMPANY_Email;
 phoneNumber.textContent = COMPANY_PHONE_NUMBER;
 companyName.forEach(name => name.textContent = COMPANY_NAME);
 
